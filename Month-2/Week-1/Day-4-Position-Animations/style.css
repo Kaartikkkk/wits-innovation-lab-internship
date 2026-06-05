@@ -1,0 +1,197 @@
+:root {
+    --primary: #2563eb;
+    --secondary: #1e293b;
+    --background: #f4f6f8;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+}
+
+/* Sticky Header */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 40px;
+
+    background: var(--secondary);
+}
+
+.navbar h2 {
+    color: white;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #555;
+}
+
+/* Cards */
+
+.pricing-container {
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+
+    width: 300px;
+
+    background: var(--white);
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+
+    animation: floatCard 3s ease-in-out infinite;
+}
+
+.card h2 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.card ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
+
+.card button {
+    border: none;
+    background: var(--primary);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    transform: scale(1.05);
+}
+
+/* Featured Card */
+
+.featured {
+    border: 3px solid var(--primary);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    right: 15px;
+
+    background: #22c55e;
+    color: white;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    z-index: 5;
+}
+
+/* Notes */
+
+.notes {
+    width: 80%;
+    margin: 60px auto;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notes h2 {
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.notes p {
+    margin-bottom: 8px;
+}
+
+/* Animation */
+
+@keyframes floatCard {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:900px) {
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
