@@ -1,15 +1,28 @@
+import { Link } from "react-router-dom";
 import blogs from "../data/blogs";
-import BlogCard from "../components/BlogCard";
 
 function Blogs() {
     return (
-        <div className="blogs-container">
-            <h1>Latest Articles</h1>
-            <div className="blogs-grid">
-                {blogs.map((blog) => (
-                    <BlogCard key={blog.id} blog={blog} />
-                ))}
-            </div>
+        <div style={{ padding: "20px" }}>
+            <h1>All Blogs</h1>
+
+            {blogs.map((blog) => (
+                <div
+                    key={blog.id}
+                    style={{
+                        border: "1px solid gray",
+                        margin: "20px 0",
+                        padding: "15px",
+                        borderRadius: "8px",
+                    }}
+                >
+                    <h2>{blog.title}</h2>
+
+                    <Link to={`/blogs/${blog.id}`}>
+                        Read More
+                    </Link>
+                </div>
+            ))}
         </div>
     );
 }
